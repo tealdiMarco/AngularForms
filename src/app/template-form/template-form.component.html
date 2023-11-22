@@ -1,1 +1,28 @@
-<p>template-form works!</p>
+<form novalidate> <!--novalidate = no controlli sul form-->
+    <div class="form-row">
+        <div class="col-md-4 mb-2">
+            <label for="name">Nome</label>
+            <input type="text" 
+                class="form-control" 
+                id="name" 
+                name="name"
+                placeholder="inserisci il nome" 
+                required 
+                minlength="2"
+                [(ngModel)]="model.name">
+            <!--ng g i(interface) appointment-->
+        </div>
+        <div class="col-md-4 mb-2">
+            <label for="mail">Mail</label>
+            <input type="email" 
+                class="form-control" 
+                id="mail" 
+                name="mail"
+                placeholder="inserisci la mail" 
+                required 
+                pattern="[a-z0-9._%+-]+@[a-z0-9.]+\.[a-z]{2,}$"
+                [(ngModel)]="model.mail">
+            <!--todo PATTERN = REGEX per mail-->
+        </div>
+    </div>
+</form>
